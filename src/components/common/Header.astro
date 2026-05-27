@@ -1,12 +1,43 @@
 ---
+import { Image } from 'astro:assets';
+import Logo from '../../assets/images/logo.png';
 ---
 <header class="header">
   <div class="inner">
-
+    <h1 class="logo">
+      <a href="/" class="logo-link">
+        <Image src={ Logo } alt="神降ろし鑑定江美香" />
+      </a>
+    </h1>
   </div>
 </header>
 
 <style lang="scss">
   @use "../../styles/variables" as *;
   @use "../../styles/mixins" as *;
+
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 110;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @include sp {
+      padding: 0 20px;
+    }
+  }
+
+  .logo {
+    max-width: 150px;
+    height: 150px;
+  }
 </style>
