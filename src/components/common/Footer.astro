@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 
 import logo from '../../assets/images/logo.png';
 ---
@@ -41,9 +42,33 @@ import logo from '../../assets/images/logo.png';
         <Image src={ logo } alt="flexshonan" />
       </a>
     </div>
-    <p class="name">有限会社フレックス湘南</p>
-    <address class="address">〒251-0035</address>
-    <address class="address">神奈川県藤沢市片瀬海岸3-14-5</address>
+    <div class="wrap">
+      <div class="company">
+        <p class="name">有限会社フレックス湘南</p>
+        <address class="address">〒251-0035</address>
+        <address class="address">神奈川県藤沢市片瀬海岸3-14-5</address>
+      </div>
+      <ul class="sns-link">
+        <li class="sns-item">
+          <a href="https://line.me/ti/p/zdm9EJsAvz">
+            <Icon class="sns-icon" name="simple-icons:line" />
+            <span class="sns-label">LINE</span>
+          </a>
+        </li>
+        <li class="sns-item">
+          <a href="https://www.facebook.com/profile.php?id=100057608222658#">
+            <Icon class="sns-icon" name="simple-icons:facebook" />
+            <span class="sns-label">Facebook</span>
+          </a>
+        </li>
+        <li class="sns-item">
+          <a href="http://flexshonan.com/">
+            <Icon class="sns-icon" name="mdi:web" />
+            <span class="sns-label">Website</span>
+          </a>
+        </li>
+      </ul>
+    </div>
     <ul class="list second">
       <li class="item"><a href="" class="link">特徴</a></li>
       <li class="item"><a href="" class="link">人気メニュー</a></li>
@@ -116,6 +141,47 @@ import logo from '../../assets/images/logo.png';
       gap: 10px;
       font-size: 0.8rem;
       font-weight: bold;
+    }
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @include sp {
+      flex-direction: column;
+    }
+  }
+
+  .sns-link {
+    display:flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 20px;
+
+    @include sp {
+      flex-direction: row;
+      margin-top: 30px;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .sns-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .sns-icon {
+    @include sp {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      padding: 10px;
     }
   }
 
