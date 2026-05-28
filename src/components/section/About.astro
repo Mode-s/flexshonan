@@ -1,12 +1,82 @@
 ---
+import { Image } from 'astro:assets';
+import about from '../../assets/images/about.jpg';
 ---
 <section class="section">
   <div class="inner">
+    <h2 class="section-title">私たちについて</h2>
 
+    <div class="about">
+      <div class="about-body">
+        <p class="about-lead">海風に包まれた、湘南・片瀬海岸のひととき。</p>
+        <p class="about-text">
+          江ノ島を望むこの場所で、訪れる方おひとりおひとりに
+          ゆっくりと向き合うことを大切にしています。
+          はじめての方も安心してお越しいただけるよう、
+          落ち着いた空間をご用意してお待ちしております。
+        </p>
+        <p class="about-text">
+          ご予約・ご相談はお気軽にどうぞ。
+          あなたのお越しを心よりお待ちしています。
+        </p>
+      </div>
+
+      <div class="about-image">
+        <Image src={about} alt="店内の様子" />
+      </div>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   @use "../../styles/variables" as *;
   @use "../../styles/mixins" as *;
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+
+  .about {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+
+    @include tb {
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 24px;
+    }
+  }
+
+  .about-body {
+    flex: 1;
+  }
+
+  .about-lead {
+    font-weight: bold;
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+    text-shadow: rgb(253, 200, 200) 1px 2px;
+  }
+
+  .about-text {
+    margin-top: 20px;
+
+    @include tb {
+      margin-top: 16px;
+    }
+  }
+
+  .about-image {
+    flex: 1;
+    aspect-ratio: 4 / 3;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #b4ecec; // 画像が入るまでのプレースホルダー
+
+    @include tb {
+      width: 100%;
+    }
+  }
 </style>

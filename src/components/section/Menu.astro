@@ -1,17 +1,97 @@
 ---
+import { Image } from 'astro:assets';
+
+import yoga from '../../assets/images/menu-yoga.png';
+import shiatsu from '../../assets/images/menu-shiatsu.jpg';
+import tanning from '../../assets/images/menu-tanning.jpeg';
 ---
-<section class="section">
+
+<section class="section" id="menu">
   <div class="inner">
     <h2 class="section-title">人気メニュー</h2>
-    <div class="content">
-      <div class="main-content">
-        <ul class="card-list">
-          <li class="card"></li>
-          <li class="card"></li>
-          <li class="card"></li>
-        </ul>
-      </div>
-    </div>
+
+    <ul class="card-list">
+      <!-- ヨガ・フィットネス -->
+      <li class="card">
+        <div class="card-image">
+          <Image src={yoga} alt="ヨガ・フィットネス" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">ヨガ・フィットネス料金</h3>
+          <p class="card-note">月額費用・回数制限なし</p>
+          <dl class="price-list">
+            <div class="price-row">
+              <dt class="price-name">レギュラー</dt>
+              <dd class="price-value">8,140円</dd>
+            </div>
+            <div class="price-row">
+              <dt class="price-name">平日</dt>
+              <dd class="price-value">6,820円</dd>
+            </div>
+            <div class="price-row">
+              <dt class="price-name">土日祝</dt>
+              <dd class="price-value">5,500円</dd>
+            </div>
+          </dl>
+          <p class="card-caption">駐車場をご利用の方は別途 1,100円</p>
+        </div>
+      </li>
+
+      <!-- 指圧 -->
+      <li class="card">
+        <div class="card-image">
+          <Image src={shiatsu} alt="指圧" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">指圧メニュー</h3>
+          <dl class="price-list">
+            <div class="price-row">
+              <dt class="price-name">20分</dt>
+              <dd class="price-value">2,200円</dd>
+            </div>
+            <div class="price-row">
+              <dt class="price-name">40分</dt>
+              <dd class="price-value">4,400円</dd>
+            </div>
+          </dl>
+        </div>
+      </li>
+
+      <!-- 日焼けマシーン -->
+      <li class="card">
+        <div class="card-image">
+          <Image src={tanning} alt="日焼けマシーン" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">日焼けマシーン</h3>
+          <p class="card-note">ジェル付き</p>
+          <dl class="price-list">
+            <div class="price-row">
+              <dt class="price-name">20分</dt>
+              <dd class="price-value">1,080円〜</dd>
+            </div>
+            <p class="card-caption">お一人専用サウナ 相談で対応可能</p>
+          </dl>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="facility">
+  <div class="inner">
+    <h2 class="section-title">設備</h2>
+
+    <ul class="facility-list">
+      <li class="facility-item">日焼けマシーン 3台</li>
+      <li class="facility-item">
+        サウナ 男1部屋 / 女1部屋（水風呂あり）
+        <span class="facility-note">お一人様サウナ可能</span>
+      </li>
+      <li class="facility-item">トレーニングジム</li>
+      <li class="facility-item">シャワールームあり</li>
+      <li class="facility-item">駐車場あり</li>
+    </ul>
   </div>
 </section>
 
@@ -22,5 +102,103 @@
   .section-title {
     text-align: center;
     font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+
+  /* メニュー */
+  .card-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+
+    @include tb {
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 24px;
+    }
+  }
+
+  .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-image {
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #b4ecec; // 画像が入るまでのプレースホルダー
+  }
+
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 4px 0;
+  }
+
+  .card-title {
+    font-weight: bold;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    text-shadow: rgb(253, 200, 200) 1px 2px;
+  }
+
+  .card-note {
+    margin-top: 8px;
+    font-size: 0.9rem;
+  }
+
+  .price-list {
+    margin-top: 16px;
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .price-name {
+    font-weight: bold;
+  }
+
+  .price-value {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .card-caption {
+    margin-top: auto;
+    padding-top: 16px;
+    font-size: 0.85rem;
+  }
+
+  /* 設備 */
+  .facility-list {
+    max-width: 600px;
+    margin: 40px auto 0;
+
+    @include sp {
+      margin-top: 24px;
+    }
+  }
+
+  .facility-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid #b4ecec;
+    font-weight: bold;
+
+    &:first-child {
+      border-top: 1px solid #b4ecec;
+    }
+  }
+
+  .facility-note {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    font-weight: normal;
   }
 </style>
