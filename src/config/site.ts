@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "フレックス湘南｜湘南・片瀬海岸のヨガ・フィットネス・指圧・日焼け",
   description:
     "神奈川県藤沢市片瀬海岸のフレックス湘南。ヨガ・フィットネス、指圧、日焼けマシーン、サウナ、トレーニングジムをご用意。江ノ島・片瀬江ノ島駅から徒歩圏内。ご予約・ご相談はお気軽にどうぞ。",
-  url: "https://flexshonan.com",
+  url: "https://flexshonan.pages.dev/",
   ogImage: "/ogp.png",
   lang: "ja",
   locale: "ja_JP",
@@ -26,7 +26,7 @@ export const siteConfig = {
   sns: {
     line: "https://line.me/ti/p/zdm9EJsAvz",
     facebook: "https://www.facebook.com/profile.php?id=100057608222658",
-    website: "http://flexshonan.com/",
+    website: "https://flexshonan.pages.dev/",
     x: "",
   },
 } as const;
