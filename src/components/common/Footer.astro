@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 
 import logo from '../../assets/images/logo.png';
 ---
-<footer class="footer">
+<footer class="footer" data-footer>
   <div class="footer-inner">
     <div class="hero-waves" aria-hidden="true">
       <svg
@@ -28,21 +28,21 @@ import logo from '../../assets/images/logo.png';
         </g>
       </svg>
     </div>
-    <nav class="site-map">
+    <nav class="site-map" data-footer-item>
       <ul class="list first">
-        <li class="item"><a href="" class="link">特徴</a></li>
-        <li class="item"><a href="" class="link">人気メニュー</a></li>
-        <li class="item"><a href="" class="link">設備</a></li>
-        <li class="item"><a href="" class="link">店舗情報</a></li>
-        <li class="item"><a href="" class="link">お問い合わせ</a></li>
+        <li class="item"><a href="#about" class="link">特徴</a></li>
+        <li class="item"><a href="#menu" class="link">人気メニュー</a></li>
+        <li class="item"><a href="#facility" class="link">設備</a></li>
+        <li class="item"><a href="#info" class="link">店舗情報</a></li>
+        <li class="item"><a href="#contact" class="link">お問い合わせ</a></li>
       </ul>
     </nav>
-    <div class="logo">
+    <div class="logo" data-footer-item>
       <a href="/" class="logo-link">
         <Image src={ logo } alt="flexshonan" />
       </a>
     </div>
-    <div class="wrap">
+    <div class="wrap" data-footer-item>
       <div class="company">
         <p class="name">有限会社フレックス湘南</p>
         <address class="address">〒251-0035</address>
@@ -69,14 +69,14 @@ import logo from '../../assets/images/logo.png';
         </li>
       </ul>
     </div>
-    <ul class="list second">
-      <li class="item"><a href="" class="link">特徴</a></li>
-      <li class="item"><a href="" class="link">人気メニュー</a></li>
-      <li class="item"><a href="" class="link">設備</a></li>
-      <li class="item"><a href="" class="link">店舗情報</a></li>
-      <li class="item"><a href="" class="link">お問い合わせ</a></li>
+    <ul class="list second" data-footer-item>
+      <li class="item"><a href="#about" class="link">特徴</a></li>
+      <li class="item"><a href="#menu" class="link">人気メニュー</a></li>
+      <li class="item"><a href="#facility" class="link">設備</a></li>
+      <li class="item"><a href="#info" class="link">店舗情報</a></li>
+      <li class="item"><a href="#contact" class="link">お問い合わせ</a></li>
     </ul>
-    <small class="copy">&copy; 2026 flexshonan</small>
+    <small class="copy" data-footer-item>&copy; 2026 flexshonan</small>
   </div>
 </footer>
 

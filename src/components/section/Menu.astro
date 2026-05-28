@@ -8,11 +8,11 @@ import tanning from '../../assets/images/menu-tanning.jpeg';
 
 <section class="section" id="menu">
   <div class="inner">
-    <h2 class="section-title">人気メニュー</h2>
+    <h2 class="section-title" data-reveal>人気メニュー</h2>
 
-    <ul class="card-list">
+    <ul class="card-list" data-reveal-group>
       <!-- ヨガ・フィットネス -->
-      <li class="card">
+      <li class="card" data-reveal-item>
         <div class="card-image">
           <Image src={yoga} alt="ヨガ・フィットネス" />
         </div>
@@ -38,7 +38,7 @@ import tanning from '../../assets/images/menu-tanning.jpeg';
       </li>
 
       <!-- 指圧 -->
-      <li class="card">
+      <li class="card" data-reveal-item>
         <div class="card-image">
           <Image src={shiatsu} alt="指圧" />
         </div>
@@ -58,7 +58,7 @@ import tanning from '../../assets/images/menu-tanning.jpeg';
       </li>
 
       <!-- 日焼けマシーン -->
-      <li class="card">
+      <li class="card" data-reveal-item>
         <div class="card-image">
           <Image src={tanning} alt="日焼けマシーン" />
         </div>
@@ -80,17 +80,17 @@ import tanning from '../../assets/images/menu-tanning.jpeg';
 
 <section class="section" id="facility">
   <div class="inner">
-    <h2 class="section-title">設備</h2>
+    <h2 class="section-title" data-reveal>設備</h2>
 
-    <ul class="facility-list">
-      <li class="facility-item">日焼けマシーン 3台</li>
-      <li class="facility-item">
+    <ul class="facility-list" data-reveal-group>
+      <li class="facility-item" data-reveal-item>日焼けマシーン 3台</li>
+      <li class="facility-item" data-reveal-item>
         サウナ 男1部屋 / 女1部屋（水風呂あり）
         <span class="facility-note">お一人様サウナ可能</span>
       </li>
-      <li class="facility-item">トレーニングジム</li>
-      <li class="facility-item">シャワールームあり</li>
-      <li class="facility-item">駐車場あり</li>
+      <li class="facility-item" data-reveal-item>トレーニングジム</li>
+      <li class="facility-item" data-reveal-item>シャワールームあり</li>
+      <li class="facility-item" data-reveal-item>駐車場あり</li>
     </ul>
   </div>
 </section>

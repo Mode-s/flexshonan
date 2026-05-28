@@ -1,19 +1,19 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<section class="section">
+<section class="section" id="contact">
   <div class="inner">
-    <h2 class="section-title">お問い合わせ</h2>
-    <p class="text">ご予約・ご相談はお気軽にどうぞ。</p>
-    <div class="contact">
+    <h2 class="section-title" data-reveal>お問い合わせ</h2>
+    <p class="text" data-reveal>ご予約・ご相談はお気軽にどうぞ。</p>
+    <div class="contact" data-reveal-group>
       <!-- LINE -->
-      <a class="contact-card" href="https://line.me/ti/p/zdm9EJsAvz" target="_blank" rel="noopener noreferrer" >
+      <a class="contact-card" href="https://line.me/ti/p/zdm9EJsAvz" target="_blank" rel="noopener noreferrer" data-reveal-item data-contact-card>
         <Icon class="contact-card-icon" name="simple-icons:line" />
         <span class="contact-card-label">LINE</span>
         <span class="contact-card-note">お気軽にメッセージを</span>
       </a>
       <!-- 電話 -->
-      <a class="contact-card" href="tel:09044517608">
+      <a class="contact-card" href="tel:09044517608" data-reveal-item data-contact-card>
         <Icon class="contact-card-icon" name="mdi:phone" />
         <span class="contact-card-label">お電話</span>
         <span class="contact-card-value">090-4451-7608</span>
@@ -52,6 +52,8 @@ import { Icon } from 'astro-icon/components';
     color: #000000;
     font-weight: bold;
     line-height: 1;
+    transform-origin: center;
+    will-change: transform;
   }
 
   .contact-card-label {

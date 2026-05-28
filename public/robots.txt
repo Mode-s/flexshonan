@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flexshonan.com/sitemap-index.xml

@@ -2,12 +2,12 @@
 import { Image } from 'astro:assets';
 import about from '../../assets/images/about.jpg';
 ---
-<section class="section">
+<section class="section" id="about">
   <div class="inner">
-    <h2 class="section-title">私たちについて</h2>
+    <h2 class="section-title" data-reveal>私たちについて</h2>
 
-    <div class="about">
-      <div class="about-body">
+    <div class="about" data-split-reveal>
+      <div class="about-body" data-split-left>
         <p class="about-lead">海風に包まれた、湘南・片瀬海岸のひととき。</p>
         <p class="about-text">
           江ノ島を望むこの場所で、訪れる方おひとりおひとりに
@@ -21,7 +21,7 @@ import about from '../../assets/images/about.jpg';
         </p>
       </div>
 
-      <div class="about-image">
+      <div class="about-image" data-split-right>
         <Image src={about} alt="店内の様子" />
       </div>
     </div>

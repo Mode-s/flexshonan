@@ -9,21 +9,22 @@ const pc = await getImage({ src: pcHero, format: 'webp' });
 const tab = await getImage({ src: tabHero, format: 'webp' });
 const sp = await getImage({ src: spHero, format: 'webp' });
 ---
-<section class="hero">
+<section class="hero" data-hero>
     <picture class="hero-picture">
       <source media="(max-width: 500px)" srcset={sp.src} />
       <source media="(max-width: 768px)" srcset={tab.src} />
       <img
         src={pc.src}
-        alt=""
+        alt="湘南・片瀬海岸のフレックス湘南"
+        data-hero-image
       />
     </picture>
     <p class="hero-text">
-      <span class="hero-text-line line1">整える。</span>
-      <span class="hero-text-line line2">鍛える。</span>
-      <span class="hero-text-line line3">焼く。</span>
+      <span class="hero-text-line line1" data-hero-line>整える。</span>
+      <span class="hero-text-line line2" data-hero-line>鍛える。</span>
+      <span class="hero-text-line line3" data-hero-line>焼く。</span>
     </p>
-    <div class="hero-waves" aria-hidden="true">
+    <div class="hero-waves" aria-hidden="true" data-hero-waves>
       <svg
         class="waves"
         xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +63,11 @@ const sp = await getImage({ src: spHero, format: 'webp' });
     display: block;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+  }
+
+  .hero-picture img {
+    will-change: transform;
   }
 
   .hero-text {
@@ -84,7 +90,7 @@ const sp = await getImage({ src: spHero, format: 'webp' });
     @include sp {
       top: 60%;
       right: 20px;
-      font-size: clamp(1.5rem, 8vw, 2.2rem);
+      font-size: clamp(3rem, 8vw, 4rem);
     }
   }
 
