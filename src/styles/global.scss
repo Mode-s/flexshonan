@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -23,15 +25,11 @@ img {
 }
 
 .section {
-  padding: 80px 20px;
-
-  @include sp {
-    padding: 48px 20px;
-  }
+  padding: 40px 20px;
 }
 
 .inner {
-  max-width: 1280px;
+  max-width: 1040px;
   width: 100%;
   margin: 0 auto;
 }

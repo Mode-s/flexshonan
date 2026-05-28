@@ -1,12 +1,65 @@
 ---
+import { Icon } from 'astro-icon/components';
 ---
 <section class="section">
   <div class="inner">
-
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="text">ご予約・ご相談はお気軽にどうぞ。</p>
+    <div class="contact">
+      <!-- LINE -->
+      <a class="contact-card" href="https://line.me/ti/p/zdm9EJsAvz" target="_blank" rel="noopener noreferrer" >
+        <Icon class="contact-card-icon" name="simple-icons:line" />
+        <span class="contact-card-label">LINE</span>
+        <span class="contact-card-note">お気軽にメッセージを</span>
+      </a>
+      <!-- 電話 -->
+      <a class="contact-card" href="tel:09044517608">
+        <Icon class="contact-card-icon" name="mdi:phone" />
+        <span class="contact-card-label">お電話</span>
+        <span class="contact-card-value">090-4451-7608</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   @use "../../styles/variables" as *;
   @use "../../styles/mixins" as *;
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #b4ecec;
+    text-shadow: rgb(253, 200, 200) 1px 2px;
+    color: #000000;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .contact-card-label {
+    padding-left: 20px;
+  }
 </style>

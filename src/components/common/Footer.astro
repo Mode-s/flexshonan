@@ -1,12 +1,170 @@
 ---
+import { Image } from 'astro:assets';
+
+import logo from '../../assets/images/logo.png';
 ---
 <footer class="footer">
-  <div class="inner">
-
+  <div class="footer-inner">
+    <div class="hero-waves" aria-hidden="true">
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="wave-parallax">
+          <use href="#gentle-wave" x="48" y="0" fill="rgba(180, 236, 236,0.7)" />
+          <use href="#gentle-wave" x="48" y="3" fill="rgba(180, 236, 236,0.5)" />
+          <use href="#gentle-wave" x="48" y="5" fill="rgba(180, 236, 236,0.3)" />
+          <use href="#gentle-wave" x="48" y="7" fill="#b4ecec" />
+        </g>
+      </svg>
+    </div>
+    <nav class="site-map">
+      <ul class="list first">
+        <li class="item"><a href="" class="link">特徴</a></li>
+        <li class="item"><a href="" class="link">人気メニュー</a></li>
+        <li class="item"><a href="" class="link">設備</a></li>
+        <li class="item"><a href="" class="link">店舗情報</a></li>
+        <li class="item"><a href="" class="link">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <a href="/" class="logo-link">
+        <Image src={ logo } alt="flexshonan" />
+      </a>
+    </div>
+    <p class="name">有限会社フレックス湘南</p>
+    <address class="address">〒251-0035</address>
+    <address class="address">神奈川県藤沢市片瀬海岸3-14-5</address>
+    <ul class="list second">
+      <li class="item"><a href="" class="link">特徴</a></li>
+      <li class="item"><a href="" class="link">人気メニュー</a></li>
+      <li class="item"><a href="" class="link">設備</a></li>
+      <li class="item"><a href="" class="link">店舗情報</a></li>
+      <li class="item"><a href="" class="link">お問い合わせ</a></li>
+    </ul>
+    <small class="copy">&copy; 2026 flexshonan</small>
   </div>
 </footer>
 
 <style lang="scss">
   @use "../../styles/variables" as *;
   @use "../../styles/mixins" as *;
+
+  .footer {
+    position: relative;
+    width: 100%;
+    margin-top: 150px;
+    text-shadow: rgb(240, 203, 203) 1px 2px;
+    background-color: #b4ecec;
+    color: #000000;
+  }
+
+  .footer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 20px 40px;
+
+    @include sp {
+      padding: 20px;
+    }
+  }
+
+  .site-map {
+    @include sp {
+      display: none;
+    }
+  }
+
+  .list.first {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    font-weight: bold;
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .name {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .address {
+    font-weight: bold;
+  }
+
+  .list.second {
+    display: none;
+
+    @include sp {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+
+  .copy {
+    display: flex;
+    justify-content: center;
+    border-top: solid 1px rgb(240, 203, 203);
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .hero-waves {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    width: 100%;
+    line-height: 0;
+  }
+
+  .waves {
+    display: block;
+    width: 100%;
+    height: 100px;
+  }
+
+  // 4枚を別々の速度で動かして「波打つ」感じを出す
+  .wave-parallax > use {
+    animation: wave-move 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  }
+  .wave-parallax > use:nth-child(1) { animation-delay: -2s; animation-duration:  7s; }
+  .wave-parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+  .wave-parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+  .wave-parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+  @keyframes wave-move {
+    0%   { transform: translate3d(-90px, 0, 0); }
+    100% { transform: translate3d( 85px, 0, 0); }
+  }
+
+  @media (max-width: 768px) {
+    .waves { height: 60px; }
+  }
+  @media (max-width: 500px) {
+    .waves { height: 40px; }
+  }
+
+  /* アクセシビリティ / アニメ抑制設定 */
+  @media (prefers-reduced-motion: reduce) {
+    .wave-parallax > use { animation: none; }
+  }
+  
 </style>
