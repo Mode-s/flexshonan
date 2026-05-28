@@ -18,6 +18,11 @@ const sp = await getImage({ src: spHero, format: 'webp' });
         alt=""
       />
     </picture>
+    <p class="hero-text">
+      <span class="hero-text-line line1">整える。</span>
+      <span class="hero-text-line line2">鍛える。</span>
+      <span class="hero-text-line line3">焼く。</span>
+    </p>
     <div class="hero-waves" aria-hidden="true">
       <svg
         class="waves"
@@ -58,6 +63,37 @@ const sp = await getImage({ src: spHero, format: 'webp' });
     width: 100%;
     height: 100%;
   }
+
+  .hero-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    right: clamp(20px, 6vw, 100px);
+    gap: 0.3em;
+    color: #fff;
+    font-weight: bold;
+    font-size: clamp(4rem, 5vw, 5rem);
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    transform: translateY(-30%) rotate(-12deg);
+    transform-origin: center;
+
+    @include sp {
+      top: 60%;
+      right: 20px;
+      font-size: clamp(1.5rem, 8vw, 2.2rem);
+    }
+  }
+
+  .hero-text-line {
+    display: block;
+  }
+
+  .line2 { margin-left: 1.2em; }
+  .line3 { margin-left: 2.4em; }
 
   .hero-waves {
     position: absolute;
